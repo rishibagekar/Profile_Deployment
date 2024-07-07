@@ -5,7 +5,7 @@ on: workflow_dispatch
 
 jobs:
   FirstJob:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Print Greeting
         run: echo "Hello World"
