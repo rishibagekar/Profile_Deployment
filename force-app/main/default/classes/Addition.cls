@@ -12,6 +12,6 @@ public  class Addition{
         System.debug('Addition of '+num1+' and '+num2+' is '+sum);
         return sum;
         //sem value returned
-        //sfdx scanner testing
+        //sfdx scanner testing for code analysis
     }
 }
