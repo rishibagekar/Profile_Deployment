@@ -15,7 +15,7 @@ jobs:
       - name: Install SF Scanner
         run: |
           npm install @salesforce/cli@latest --global
-          sf --version
+          echo run sf --version
           sf plugins install @salesforce/sfdx-scanner@latest
       - name: Apex Static Analysis
         run: sf scanner run --target "force-app" --format junit --outfile results.html
