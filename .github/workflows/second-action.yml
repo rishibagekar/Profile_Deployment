@@ -16,7 +16,24 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
+        run: npm 
+        
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Node JS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
         run: npm install
+      - name: Build Job
+        run: npm run build
+      - name: Deploy job
+        run: echo "Builded successfully"
 
   check:
     runs-on: ubuntu-latest
