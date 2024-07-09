@@ -1,0 +1,24 @@
+# Code Scanner workflow
+
+name: Run SF Scanner
+on:
+  push:
+    paths:
+      - force-app/**
+
+jobs:
+  scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install SF Scanner
+        run: |
+          npm install @salesforce/cli@2.0.1 --global
+          sf --version
+          sf plugins install @salesforce/sfdx-scanner
+      - name: Apex Static Analysis
+        run: sf scanner run --target "force-app" --format junit --outfile results.html
+      - name: Scan Completed
+        run: echo "Scanning completed successfully"
+    
