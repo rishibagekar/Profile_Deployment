@@ -17,3 +17,13 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm install
+
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parallel run
+        run: echo "Hello World"
+      - name: Print Bye
+        run: |
+             echo "Good Bye"
+             echo "Good night"
